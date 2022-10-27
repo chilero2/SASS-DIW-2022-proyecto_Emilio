@@ -1,0 +1,36 @@
+$colors: (
+  bg-light: #ecfbf3,
+  bg-dark: #006967,
+  title: #fa6666,
+  footer: #005569,
+  bg-nav: #ecfbf3,
+);
+
+$font_size: (
+  normal: 0.9rem,
+  nav: 1.5rem,
+  big_title: 6rem,
+);
+
+$font_style: (
+  tittle: "Italiana",
+  normal: "Lato",
+  special: "Playfair",
+);
+
+$font_weight: (
+  light: 300,
+  normal: 400,
+  bold: 700,
+);
+
+@mixin content_flex(
+  $justify-content: center,
+  $direccion: row,
+  $align-items: center
+) {
+  display: flex;
+  flex-direction: $direccion;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}

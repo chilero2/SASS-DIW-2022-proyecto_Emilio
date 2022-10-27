@@ -1,0 +1,21 @@
+{
+  "name": "sass-diw-2022-proyecto_emilio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "rm -rf ./css & sass --watch --no-source-map ./scss/styles.scss ./css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chilero2/SASS-DIW-2022-proyecto_Emilio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chilero2/SASS-DIW-2022-proyecto_Emilio/issues"
+  },
+  "homepage": "https://github.com/chilero2/SASS-DIW-2022-proyecto_Emilio#readme"
+}

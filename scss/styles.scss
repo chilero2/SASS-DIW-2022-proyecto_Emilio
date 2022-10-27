@@ -1,0 +1,43 @@
+$colors: (
+    bg-light: #ECFBF3,
+    bg-dark: #006967,
+    title: #FA6666,
+    font-big: #005569
+);
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: map-get( $colors, bg-light );
+
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 5rem;
+
+    &__img {
+        width: 8rem;
+        height: 5rem;
+        background-color: red;
+    }
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 3rem;
+
+        list-style: none;
+        background-color: blue;
+    }
+
+    &__item {
+        padding: 0 2rem;
+    }
+    
+}

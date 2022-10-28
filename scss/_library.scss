@@ -4,18 +4,22 @@ $colors: (
   title: #fa6666,
   footer: #005569,
   bg-nav: #ecfbf3,
+  text: #333
 );
+
 
 $font_size: (
   normal: 0.9rem,
   nav: 1.5rem,
+  small_title: 2rem,
+  title: 4rem,
   big_title: 6rem,
 );
 
-$font_style: (
-  tittle: "Italiana",
-  normal: "Lato",
-  special: "Playfair",
+$font_type: (
+  title: ("Italiana", "serif"),
+  normal: ("Lato", "sans-serif"),
+  special: ("Playfair", "sans-serif"),
 );
 
 $font_weight: (
@@ -29,8 +33,29 @@ $font_weight: (
   $direccion: row,
   $align-items: center
 ) {
-  display: flex;
+  display: flex;  
   flex-direction: $direccion;
   justify-content: $justify-content;
   align-items: $align-items;
+}
+
+@mixin fonts($size, $weight, $type: map-get($font_type, normal ), $color: map-get($colors, text ) ) {
+  @if map-has-key($font_size, $size ) {
+    $size: map-get($font_size, $size )
+  }
+  @if map-has-key($font_weight, $weight ) {
+    $weight: map-get($font_weight, $weight )
+  }
+  @if map-has-key($font_type, $type ) {
+    $type: map-get($font_type, $type )
+  }
+
+  @if map-has-key($colors, $color ) {
+    $color: map-get($colors, $color )
+  }
+  
+  font-family: $type;
+  font-weight: $weight;
+  font-size: $size;
+  color: $color;
 }

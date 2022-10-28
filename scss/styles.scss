@@ -7,9 +7,7 @@
 body {
   margin: 0;
   background-color: map-get(l.$colors, bg-light);
-  font-family: map-get(l.$font_style, normal), sans-serif;
-  font-size: map-get(l.$font_size, normal);
-  font-weight: map-get(l.$font_weight, light);
+  @include l.fonts(normal, light);
 }
 .header,
 .main,
@@ -37,21 +35,18 @@ body {
 }
 
 .nav {
-  width: 50%;
-  font-family: map-get(l.$font_style, special);
-  font-size: map-get(l.$font_size, nav);
-  font-weight: map-get(l.$font_weight, bold);
-  margin: 2em 0;
+  width: 50%;  
 
   &__items {
     @include l.content_flex(space-between);
-    padding: 0 3em;
+    padding: 0 3rem;
     list-style: none;
   }
 
   &__link {
     text-decoration: none;
-    color: map-get(l.$colors, title);
+    @include l.fonts(nav, bold, special, title);
+    margin: 2em 0;
   }
 }
 
@@ -67,14 +62,16 @@ body {
   @include l.content_flex;
   min-height: 90vh;
   &__title {
-    font-family: map-get(l.$font_style, tittle);
-    font-size: map-get(l.$font_size, big_title);
+    @include l.fonts(big_title, bold, title, footer);
   }
 }
 
 .proyect {
   background-color: map-get(l.$colors, bg-dark);
-  @include l.content_flex;
+  @include l.content_flex(center, column);
+  &__title {
+    @include l.fonts(title, bold, title, bg-light);
+  }
 }
 
 .boxes {
@@ -86,9 +83,20 @@ body {
 }
 
 .box {
-  width: 20rem;
-  height: 22rem;
-  background-color: map-get(l.$colors, bg-light);
+  @include l.content_flex(space-between, column, center);
   justify-self: center;
   align-self: center;
+  width: 20rem;
+  height: 22rem;
+  padding: 2em 2em 5em;
+  background-color: map-get(l.$colors, bg-light);
+  border-radius: .5rem;  
+  // border-radius: 33px;
+  // background: #006967;
+  // box-shadow:  5px 5px 5px #00514f,
+  //              -5px -5px 5px #00817f;
+  &__title {
+    @include l.fonts(small_title, bold, special, title);    
+  }
+
 }

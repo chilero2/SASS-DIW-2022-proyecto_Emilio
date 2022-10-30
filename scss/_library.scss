@@ -4,22 +4,40 @@ $colors: (
   title: #fa6666,
   footer: #005569,
   bg-nav: #ecfbf3,
-  text: #333
+  text: #333,
+  carcd: #006967,
+  footer-text: #ecfbf380,
+  gallery-btn: #00696750,
+  gallery-btn--hover: #00696799,
 );
-
 
 $font_size: (
   normal: 0.9rem,
+  comments: 1.4rem,
+  comments_title: 3rem,
+  comments-title--mobile: 1.5rem,
+  comments--mobile: 1.2rem,
   nav: 1.5rem,
   small_title: 2rem,
   title: 4rem,
+  title-mobile: 2.5rem,
   big_title: 6rem,
+  big_title--mobile: 5rem,
 );
 
 $font_type: (
-  title: ("Italiana", "serif"),
-  normal: ("Lato", "sans-serif"),
-  special: ("Playfair", "sans-serif"),
+  title: (
+    "Italiana",
+    "serif",
+  ),
+  normal: (
+    "Lato",
+    "sans-serif",
+  ),
+  special: (
+    "Playfair",
+    "sans-serif",
+  ),
 );
 
 $font_weight: (
@@ -28,34 +46,59 @@ $font_weight: (
   bold: 700,
 );
 
+$breakpoints: (
+  tablet: 640px,
+  laptop: 1024px,
+  desktop: 1440px,
+);
+
 @mixin content_flex(
   $justify-content: center,
   $direccion: row,
   $align-items: center
 ) {
-  display: flex;  
+  display: flex;
   flex-direction: $direccion;
   justify-content: $justify-content;
   align-items: $align-items;
 }
 
-@mixin fonts($size, $weight, $type: map-get($font_type, normal ), $color: map-get($colors, text ) ) {
-  @if map-has-key($font_size, $size ) {
-    $size: map-get($font_size, $size )
+@mixin fonts(
+  $size,
+  $weight,
+  $type: map-get($font_type, normal),
+  $color: map-get($colors, text)
+) {
+  @if map-has-key($font_size, $size) {
+    $size: map-get($font_size, $size);
   }
-  @if map-has-key($font_weight, $weight ) {
-    $weight: map-get($font_weight, $weight )
+  @if map-has-key($font_weight, $weight) {
+    $weight: map-get($font_weight, $weight);
   }
-  @if map-has-key($font_type, $type ) {
-    $type: map-get($font_type, $type )
+  @if map-has-key($font_type, $type) {
+    $type: map-get($font_type, $type);
   }
 
-  @if map-has-key($colors, $color ) {
-    $color: map-get($colors, $color )
+  @if map-has-key($colors, $color) {
+    $color: map-get($colors, $color);
   }
-  
+
   font-family: $type;
   font-weight: $weight;
   font-size: $size;
   color: $color;
+}
+
+@mixin responsive($key) {
+  //si se le ha pasado una key del mapa, aplica ese valor
+  @if map-has-key($breakpoints, $key) {
+    @media screen and (min-width: map-get($breakpoints, $key)) {
+      @content;
+    }
+    //si se le ha pasado una medida, aplica ese valor
+  } @else {
+    @media screen and (min-width: $key) {
+      @content;
+    }
+  }
 }

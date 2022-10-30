@@ -5,218 +5,356 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Italiana&family=Lato:wght@300;700&family=Playfair+Display:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,0"
+    />
+    <script
+      src="https://kit.fontawesome.com/b7661ef836.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="header__content">
-        <div class="header__logo"></div>
-        <nav class="nav">
-          <div class="nav__links">
-            <ul class="nav__items">
-              <li class="nav__item"><a href="" class="nav__link">Home</a></li>
-              <li class="nav__item">
-                <a href="" class="nav__link">Proyecto</a>
-              </li>
-              <li class="nav__item">
-                <a href="" class="nav__link">Galeria</a>
-              </li>
-              <li class="nav__item"><a href="" class="nav__link">Únete</a></li>
-            </ul>
+    <div class="body">
+      <header class="header">
+        <div class="header__content">
+          <div id="toggle" class="header__picture">
+            <div class="header__logo"><h2>leerte</h2></div>
           </div>
-        </nav>
-      </div>
-    </header>
+          <nav id="nav" class="nav">
+            <div class="nav__links">
+              <ul class="nav__items">
+                <li class="nav__item">
+                  <a href="#" class="nav__link">Home</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#proyecto" class="nav__link">Proyecto</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#galeria" class="nav__link">Galeria</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#formulario" class="nav__link">Únete</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
 
-    <main class="main">
-      <section class="container home">
-        <h1 class="home__title">Lee, Comparte y Conversa</h1>
-      </section>
+      <main class="main">
+        <div class="main__container">
+          <section id="home" class="container home">
+            <h1 class="home__title">Lee, Comparte y Conversa</h1>
+          </section>
 
-      <div class="container">
-        <section class="proyect">
-          <h2 class="proyect__title">
-            ¿Que hace <span class="proyect__title--strong">Leerte</span> por ti?
-          </h2>
-          <div class="boxes">
-            <article class="box box-1">
-              <h3 class="box__title">Título</h3>
-              <img
-                src="./assets/img/icon/icon__sentiment_satisfied.svg"
-                alt="cara sonriente"
-                class="box__img"
-              />
-              <p class="box__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus amet nostrum cumque expedita qui itaque perferendis
-                repellendus at voluptas sint, fuga iste, aut reiciendis
-                voluptates ab, ipsum est illo debitis.
-              </p>
-            </article>
-            <article class="box box-2">
-              <h3 class="box__title">Título</h3>
-              <img src="" alt="" class="box__img" />
-              <p class="box__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus amet nostrum cumque expedita qui itaque perferendis
-                repellendus at voluptas sint, fuga iste, aut reiciendis
-                voluptates ab, ipsum est illo debitis.
-              </p>
-            </article>
-            <article class="box box-3">
-              <h3 class="box__title">Título</h3>
-              <img src="" alt="" class="box__img" />
-              <p class="box__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus amet nostrum cumque expedita qui itaque perferendis
-                repellendus at voluptas sint, fuga iste, aut reiciendis
-                voluptates ab, ipsum est illo debitis.
-              </p>
-            </article>
-            <article class="box box-4">
-              <h3 class="box__title">Título</h3>
-              <img src="" alt="" class="box__img" />
-              <p class="box__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus amet nostrum cumque expedita qui itaque perferendis
-                repellendus at voluptas sint, fuga iste, aut reiciendis
-                voluptates ab, ipsum est illo debitis.
-              </p>
-            </article>
-            <article class="box box-5">
-              <h3 class="box__title">Título</h3>
-              <img src="" alt="" class="box__img" />
-              <p class="box__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus amet nostrum cumque expedita qui itaque perferendis
-                repellendus at voluptas sint, fuga iste, aut reiciendis
-                voluptates ab, ipsum est illo debitis.
-              </p>
-            </article>
-            <article class="box box-6">
-              <h3 class="box__title">Título</h3>
-              <img src="" alt="" class="box__img" />
-              <p class="box__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus amet nostrum cumque expedita qui itaque perferendis
-                repellendus at voluptas sint, fuga iste, aut reiciendis
-                voluptates ab, ipsum est illo debitis.
-              </p>
-            </article>
+          <div id="proyecto" class="container container--dark">
+            <section class="proyect">
+              <h2 class="container__title">
+                ¿Que hace
+                <span class="container__title--strong">Leerte</span> por ti?
+              </h2>
+              <div class="boxes">
+                <article class="box box-1">
+                  <h3 class="box__title">Innovador</h3>
+                  <div>
+                    <span class="material-symbols-outlined box__icon">
+                      tips_and_updates
+                    </span>
+                  </div>
+                  <p class="box__text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Possimus amet nostrum cumque expedita qui itaque perferendis
+                    repellendus at voluptas sint, fuga iste, aut reiciendis
+                    voluptates ab, ipsum est illo debitis.
+                  </p>
+                </article>
+                <article class="box box-2">
+                  <h3 class="box__title">Grandes títulos</h3>
+                  <div>
+                    <span class="material-symbols-outlined box__icon"
+                      >book</span
+                    >
+                  </div>
+                  <p class="box__text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Possimus amet nostrum cumque expedita qui itaque perferendis
+                    repellendus at voluptas sint, fuga iste, aut reiciendis
+                    voluptates ab, ipsum est illo debitis.
+                  </p>
+                </article>
+                <article class="box box-3">
+                  <h3 class="box__title">Tertulias</h3>
+                  <div>
+                    <span class="material-symbols-outlined box__icon">
+                      interpreter_mode
+                    </span>
+                  </div>
+                  <p class="box__text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Possimus amet nostrum cumque expedita qui itaque perferendis
+                    repellendus at voluptas sint, fuga iste, aut reiciendis
+                    voluptates ab, ipsum est illo debitis.
+                  </p>
+                </article>
+                <article class="box box-4">
+                  <h3 class="box__title">Conoce gente</h3>
+                  <div>
+                    <span class="material-symbols-outlined box__icon">
+                      person_add
+                    </span>
+                  </div>
+                  <p class="box__text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Possimus amet nostrum cumque expedita qui itaque perferendis
+                    repellendus at voluptas sint, fuga iste, aut reiciendis
+                    voluptates ab, ipsum est illo debitis.
+                  </p>
+                </article>
+                <article class="box box-5">
+                  <h3 class="box__title">Comparte libros</h3>
+                  <div>
+                    <span class="material-symbols-outlined box__icon">
+                      diversity_3
+                    </span>
+                  </div>
+                  <p class="box__text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Possimus amet nostrum cumque expedita qui itaque perferendis
+                    repellendus at voluptas sint, fuga iste, aut reiciendis
+                    voluptates ab, ipsum est illo debitis.
+                  </p>
+                </article>
+                <article class="box box-6">
+                  <h3 class="box__title">Retos semanales</h3>
+                  <div>
+                    <span class="material-symbols-outlined box__icon">
+                      psychology
+                    </span>
+                  </div>
+                  <p class="box__text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Possimus amet nostrum cumque expedita qui itaque perferendis
+                    repellendus at voluptas sint, fuga iste, aut reiciendis
+                    voluptates ab, ipsum est illo debitis.
+                  </p>
+                </article>
+              </div>
+            </section>
           </div>
-        </section>
-      </div>
 
-      <div class="container container__gallery">
-        <div class="carrusel">
-          <div class="carrusel__items">
-            <div class="carrusel__item">
-              <img src="" alt="" class="carrusel__img" />
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
-                quos inventore provident et voluptatum, quod non ullam vel
-                incidunt saepe excepturi odit perspiciatis eius voluptate
-                deleniti. Consequuntur voluptatum porro ipsam!
-              </p>
+          <div id="galeria" class="container gallery">
+            <div class="carrusel">
+              <h2 class="container__title container__title--dark">
+                Mucha gente ya forman parte de
+                <span class="container__title--strong">Leerte</span>...
+              </h2>
+              <div class="carrusel__show">
+                <div id="items" class="carrusel__items">
+                  <div class="carrusel__item">
+                    <div class="carrusel__img">
+                      <img
+                        src="./assets/img/pexels-cottonbro-4626371.jpg"
+                        alt=""
+                        class="carrusel__img"
+                      />
+                    </div>
+                    <div class="carrusel__card card">
+                      <div class="card__content">
+                        <div class="card__front">
+                          <h3 class="card__title">Conchi Martinez, Albacete</h3>
+                        </div>
+
+                        <div class="card__back">
+                          <p class="card__description">
+                            "Me encata Leerte. Todas las semanas tengo nuevos
+                            libros"
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carrusel__item">
+                    <div class="carrusel__img">
+                      <img
+                        src="./assets/img/pexels-craig-adderley-1467564.jpg"
+                        alt=""
+                        class="carrusel__img"
+                      />
+                    </div>
+                    <div class="carrusel__card card">
+                      <div class="card__content">
+                        <div class="card__front">
+                          <h3 class="card__title">Manolo García, Murcia</h3>
+                        </div>
+
+                        <div class="card__back">
+                          <p class="card__description">
+                            "He convocido a mucha gente interesante gracias a
+                            Leerte"
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carrusel__item">
+                    <div class="carrusel__img">
+                      <img
+                        src="./assets/img/pexels-mental-health-america-(mha)-5531323(1).jpg"
+                        alt=""
+                        class="carrusel__img"
+                      />
+                    </div>
+                    <div class="carrusel__card card">
+                      <div class="card__content">
+                        <div class="card__front">
+                          <h3 class="card__title">Conchi Martinez, Albacete</h3>
+                        </div>
+
+                        <div class="card__back">
+                          <p class="card__description">
+                            "Me encata Leerte. Todas las semanas tengo nuevos
+                            libros"
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carrusel__item">
+                    <div class="carrusel__img">
+                      <img
+                        src="./assets/img/pexels-streetwindy-2912515.jpg"
+                        alt=""
+                        class="carrusel__img"
+                      />
+                    </div>
+                    <div class="carrusel__card card">
+                      <div class="card__content">
+                        <div class="card__front">
+                          <h3 class="card__title">Conchi Martinez, Albacete</h3>
+                        </div>
+
+                        <div class="card__back">
+                          <p class="card__description">
+                            "Me encata Leerte. Todas las semanas tengo nuevos
+                            libros"
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="btn" class="carrusel__buttons">
+                <div
+                  id="btn-left"
+                  class="carrusel__button carrusel__button--left"
+                ></div>
+                <div
+                  id="btn-right"
+                  class="carrusel__button carrusel__button--right"
+                ></div>
+              </div>
             </div>
-            <div class="carrusel__item">
-              <img src="" alt="" class="carrusel__img" />
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
-                quos inventore provident et voluptatum, quod non ullam vel
-                incidunt saepe excepturi odit perspiciatis eius voluptate
-                deleniti. Consequuntur voluptatum porro ipsam!
-              </p>
-            </div>
-            <div class="carrusel__item">
-              <img src="" alt="" class="carrusel__img" />
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
-                quos inventore provident et voluptatum, quod non ullam vel
-                incidunt saepe excepturi odit perspiciatis eius voluptate
-                deleniti. Consequuntur voluptatum porro ipsam!
-              </p>
-            </div>
-            <div class="carrusel__item">
-              <img src="" alt="" class="carrusel__img" />
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
-                quos inventore provident et voluptatum, quod non ullam vel
-                incidunt saepe excepturi odit perspiciatis eius voluptate
-                deleniti. Consequuntur voluptatum porro ipsam!
-              </p>
+          </div>
+
+          <div id="formulario" class="container container--dark">
+            <div class="container__form">
+              <h2 class="container__title">
+                ...no te lo pienses y
+                <span class="container__title--strong">únete</span>
+              </h2>
+
+              <form action="#" class="form">
+                <div class="form__text">
+                  <p>
+                    Rellena este formulario y nos pondremos en contacto contigo
+                  </p>
+                </div>
+                <div class="form__items">
+                  <div class="form__item">
+                    <label for="name" class="form__label">Nombre:</label
+                    ><input type="text" name="name" class="form__input" />
+                  </div>
+                  <div class="form__item">
+                    <label for="surname" class="form__label">Apellidos:</label
+                    ><input type="text" name="surname" class="form__input" />
+                  </div>
+                  <div class="form__item">
+                    <label for="mail" class="form__label">Email:</label
+                    ><input type="text" name="mail" class="form__input" />
+                  </div>
+                  <div class="form__item form__item--textarea">
+                    <label for="comments" class="form__label"
+                      >Comentarios:</label
+                    ><textarea
+                      name="comments"
+                      class="form__input form__textarea"
+                    ></textarea>
+                  </div>
+                  <div class="form__btns">
+                    <input class="form__btn" type="submit" value="Me Uno!" />
+                  </div>
+                </div>
+              </form>
+              <div class="enlace">
+                <a href="#" class="enlace__home">
+                  <span><i class="fa-solid fa-angles-up"></i></span
+                ></a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </main>
 
-      <div class="container container__form">
-        <form action="#" class="form">
-          <h2 class="form__title">Formulario</h2>
-          <p class="form__text">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos,
-            suscipit!
+      <footer class="footer">
+        <div class="footer__rrss rrss">
+          <ul class="rrss__items">
+            <li class="rrss__item">
+              <a href="" class="rrss__link"
+                ><img src="./assets/img/facebook.svg" alt=""
+              /></a>
+            </li>
+            <li class="rrss__item">
+              <a href="" class="rrss__link"
+                ><img src="./assets/img/youtube.svg" alt=""
+              /></a>
+            </li>
+            <li class="rrss__item">
+              <a href="" class="rrss__link"
+                ><img src="./assets/img/instagram.svg" alt=""
+              /></a>
+            </li>
+            <li class="rrss__item">
+              <a href="" class="rrss__link"
+                ><img src="./assets/img/twitter.svg" alt="twitter"
+              /></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__created created">
+          <p class="created__text">Creado por Emilio Blasco</p>
+        </div>
+
+        <div class="footer__info-legal">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae
+            consectetur hic ex modi eaque ea accusamus vitae quod soluta.
           </p>
-          <div class="form__item">
-            <label for="name" class="form__label">Nombre:</label
-            ><input type="text" name="name" class="form__input" />
-          </div>
-          <div class="form__item">
-            <label for="surname" class="form__label">Apellidos</label
-            ><input type="text" name="surname" class="form__input" />
-          </div>
-          <div class="form__item">
-            <label for="mail" class="form__label">Email:</label
-            ><input type="text" name="mail" class="form__input" />
-          </div>
-          <div class="form__item">
-            <label for="comments" class="form__label">Comentarios:</label
-            ><textarea
-              name="comments"
-              cols="30"
-              rows="10"
-              class="form__text-area"
-            ></textarea>
-          </div>
-          <input type="submit" value="Enviar" />
-        </form>
-      </div>
-    </main>
+        </div>
 
-    <footer class="footer">
-      <div class="rrss">
-        <ul class="rrss__items">
-          <li class="rrss__item">
-            <a href="" class="rrss__link"><img src="" alt="" /></a>
-          </li>
-          <li class="rrss__item">
-            <a href="" class="rrss__link"><img src="" alt="" /></a>
-          </li>
-          <li class="rrss__item">
-            <a href="" class="rrss__link"><img src="" alt="" /></a>
-          </li>
-          <li class="rrss__item">
-            <a href="" class="rrss__link"><img src="" alt="" /></a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="created">
-        <p class="created__text"></p>
-      </div>
-
-      <div class="info-legal">
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quae
-          consectetur hic ex modi eaque ea accusamus vitae quod soluta.
-        </p>
-      </div>
-    </footer>
+        <script src="./js/script.js"></script>
+      </footer>
+    </div>
   </body>
 </html>

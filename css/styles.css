@@ -4,7 +4,6 @@
 
 body {
   margin: 0;
-  background-color: #ecfbf3;
   font-family: "Lato", "sans-serif";
   font-weight: 300;
   font-size: 0.9rem;
@@ -16,10 +15,63 @@ body {
 }
 
 .body {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+svg {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.fondo {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #ecfbf3;
+  z-index: -1;
+  filter: blur(70px);
+}
+.fondo__svg {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  animation: fondo-1 100s linear infinite both;
+}
+.fondo__svg--1 {
+  top: 0;
+  left: 0;
+  fill: red;
+}
+@keyframes fondo-1 {
+  from {
+    transform: rotate(0deg) scale(3);
+  }
+  to {
+    transform: rotate(360deg) scale(3);
+  }
+}
+.fondo__svg--2 {
+  top: 0;
+  right: 0;
+  fill: green;
+}
+.fondo__svg--3 {
+  bottom: 0;
+  left: 0;
+  fill: orange;
+}
+.fondo__svg--4 {
+  bottom: 0;
+  right: 0;
+  fill: darksalmon;
 }
 
 .header {

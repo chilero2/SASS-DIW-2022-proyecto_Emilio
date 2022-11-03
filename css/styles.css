@@ -1,9 +1,14 @@
 * {
   box-sizing: border-box;
 }
+*::selection {
+  background-color: #fa6666;
+  color: #006967;
+}
 
 body {
   margin: 0;
+  width: 100%;
   font-family: "Lato", "sans-serif";
   font-weight: 300;
   font-size: 0.9rem;
@@ -12,9 +17,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #ecfbf3;
 }
 
 .body {
+  width: 100%;
   position: relative;
   z-index: 2;
   display: flex;
@@ -23,19 +30,12 @@ body {
   align-items: center;
 }
 
-svg {
-  max-width: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
 .fondo {
   position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #ecfbf3;
   z-index: 1;
   filter: blur(70px);
 }
@@ -43,11 +43,11 @@ svg {
   width: 50%;
   height: 50%;
   position: absolute;
-  animation: fondo-1 50s linear infinite both;
+  animation: fondo-1 10s linear infinite both;
 }
 @keyframes fondo-1 {
   from {
-    transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(3);
   }
   to {
     transform: rotate(360deg) scale(3);
@@ -77,8 +77,7 @@ svg {
 .header {
   margin-top: 0;
   width: 100%;
-  background-color: #ecfbf3;
-  transition: transform 0.8s, background-color 1s;
+  transition: transform 0.8s, background-color 0.8s;
 }
 .header__content {
   position: relative;
@@ -110,10 +109,12 @@ svg {
 }
 @media screen and (min-width: 1024px) {
   .header {
+    background-color: #ecfbf3;
     position: fixed;
     top: 0;
-    padding: 0 12rem;
+    padding: 0 0.5rem 0 3rem;
     z-index: 9;
+    filter: drop-shadow(0 -10px 20px rgb(170, 170, 170));
   }
   .header__content {
     display: flex;
@@ -122,11 +123,16 @@ svg {
     align-items: center;
   }
 }
+@media screen and (min-width: 1440px) {
+  .header {
+    padding: 0 12rem;
+  }
+}
 
 .nav {
   width: 100%;
   text-align: right;
-  transition: all 1s;
+  transition: transform 1s;
   transform: translateY(-200%);
 }
 .nav__items {
@@ -159,20 +165,20 @@ svg {
     align-items: center;
   }
   .nav__item {
-    padding-left: 5em;
+    padding-left: 2em;
   }
   .nav__link {
-    transition: all 2s ease;
+    transition: text-decoration 2s ease;
   }
   .nav__link:hover {
     position: relative;
+    text-decoration-line: underline;
+    text-decoration-color: rgba(250, 102, 102, 0.3137254902);
   }
-  .nav__link:hover::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    border: 1px solid rgba(250, 102, 102, 0.5019607843);
+}
+@media screen and (min-width: 1440px) {
+  .nav__item {
+    padding-left: 5em;
   }
 }
 
@@ -217,9 +223,9 @@ svg {
   width: 100vw;
   background-color: #006967;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
   .container--dark {
-    width: 99vw;
+    width: 99.1vw;
   }
 }
 .container__form {
@@ -258,6 +264,7 @@ svg {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  text-align: center;
   margin-top: -5rem;
 }
 .home__title {
@@ -337,6 +344,16 @@ svg {
   font-size: 4rem;
   color: #006967;
 }
+@media screen and (min-width: 640px) {
+  .box {
+    width: 17rem;
+  }
+}
+@media screen and (min-width: 640px) {
+  .box {
+    width: 22rem;
+  }
+}
 
 .gallery {
   display: flex;
@@ -398,7 +415,7 @@ svg {
   background-color: rgba(0, 105, 103, 0.3137254902);
 }
 .carrusel__button:hover, .carrusel__button:active {
-  transition: all 0.3s linear;
+  transition: box-shadow 0.3s linear;
   background: linear-gradient(145deg, #00706e, #005f5d);
   box-shadow: 0.5rem 0.5rem 1rem #5e6461, -0.5rem -0.5rem 1rem #ffffff;
 }
@@ -554,7 +571,7 @@ svg {
   align-items: start;
 }
 .form__item:focus-within {
-  transition: all 0.5s ease;
+  transition: color 0.5s ease;
   color: #ecfbf3;
 }
 .form__label {
@@ -573,7 +590,7 @@ svg {
 }
 .form__input:focus {
   outline: none;
-  transition: all 2s ease;
+  transition: background 2s ease;
   background-color: #ecfbf3;
 }
 .form__textarea {
@@ -673,7 +690,7 @@ svg {
   font-weight: 700;
   font-size: 4rem;
   color: rgba(236, 251, 243, 0.5019607843);
-  transition: all 0.5s ease;
+  transition: color 0.5s ease;
 }
 .enlace__home:hover {
   color: #ecfbf3;
@@ -707,7 +724,6 @@ svg {
 }
 @media screen and (min-width: 1024px) {
   .footer {
-    width: 99vw;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -731,6 +747,11 @@ svg {
   .footer__info-legal {
     border: 0;
     width: 30%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .footer {
+    width: 99.1vw;
   }
 }
 

@@ -2,46 +2,47 @@
 
 * {
   box-sizing: border-box;
+  &::selection {
+    background-color:map-get(l.$colors, title );
+    color: map-get(l.$colors, bg-dark );
+  }
 }
 
 body {
   margin: 0;
-  // background-color: map-get(l.$colors, bg-light);
+  width: 100%;
   @include l.fonts(normal, light);
   @include l.content_flex(center, column, center);
+  background-color: map-get(l.$colors, bg-light);
 }
 .body {
+  width: 100%;
   position: relative;
   z-index: 2;
   @include l.content_flex(center, column, center);
+
+
 }
 
-svg {
-  max-width: 100%;
-  width: 100%;
-  object-fit: cover;
-}
 .fondo {
   position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background-color: map-get(l.$colors, bg-light);
+
   z-index: 1;
   filter: blur(70px);
 
   &__svg {
     width: 50%;
     height: 50%;
-    @include l.animacion_fondo;
-
+    @include l.animacion_fondo;  
 
     &--1 {
       top: 0;
       left: 0;
       fill: map-get(l.$colors, svg-1);
-
     }
 
     &--2{
@@ -63,11 +64,6 @@ svg {
     }
 
   }
-
- 
- 
-
-
   
 }
 
@@ -75,8 +71,8 @@ svg {
 .header {
   margin-top: 0;
   width: 100%;
-  background-color: map-get(l.$colors, bg-nav);
-  transition: transform 0.8s, background-color 1s;
+  transition: transform 0.8s, background-color 0.8s;
+
   &__content {
     position: relative;
   }
@@ -110,20 +106,27 @@ svg {
   }
 
   @include l.responsive(laptop) {
+    background-color: map-get(l.$colors, bg-nav);
     position: fixed;
     top: 0;
-    padding: 0 12rem;
+    padding: 0 .5rem 0 3rem;
     z-index: 9;
+    filter: drop-shadow(0 -10px 20px rgb(170,170,170));
     &__content {
       @include l.content_flex(space-between, row, center);
     }
   }
+
+  @include l.responsive(desktop) {
+    padding: 0 12rem;
+  }
+
 }
 
 .nav {
   width: 100%;
   text-align: right;
-  transition: all 1s;
+  transition: transform 1s;
   transform: translateY(-200%);
   &__items {
     padding: 0 3rem;
@@ -153,22 +156,23 @@ svg {
     }
 
     &__item {
-      padding-left: 5em;
+      padding-left: 2em;
     }
 
     &__link {
-      transition: all 2s ease;
+      transition: text-decoration 2s ease;
+      
       &:hover {
         position: relative;
-
-        &::before {
-          content: "";
-          position: absolute;
-          width: 100%;
-          bottom: 0;
-          border: 1px solid #fa666680;
-        }
+        text-decoration-line: underline;
+        text-decoration-color: #fa666650;
       }
+    }
+  }
+
+  @include l.responsive(desktop) {
+    &__item {
+      padding-left: 5em;
     }
   }
 }
@@ -204,8 +208,8 @@ svg {
   &--dark {
     width: 100vw;
     background-color: map-get(l.$colors, bg-dark);
-    @include l.responsive(laptop) {
-      width: 99vw;
+    @include l.responsive(desktop) {
+      width: 99.1vw;
     }
   }
 
@@ -236,6 +240,7 @@ svg {
 
 .home {
   @include l.content_flex;
+  text-align: center;
   margin-top: -5rem;
   &__title {
     padding: 1rem 1.5rem;
@@ -294,6 +299,13 @@ svg {
     font-size: map-get(l.$font_size, title);
     color: map-get(l.$colors, bg-dark);
   }
+  @include l.responsive(tablet) {
+    width: 17rem;
+  }
+
+  @include l.responsive(tablet) {
+    width: 22rem;
+  }
 }
 
 .gallery {
@@ -347,7 +359,7 @@ svg {
     background-color: map-get(l.$colors, gallery-btn);
     &:hover,
     &:active {
-      transition: all 0.3s linear;
+      transition: box-shadow 0.3s linear;
       background: linear-gradient(145deg, #00706e, #005f5d);
       box-shadow: 0.5rem 0.5rem 1rem #5e6461, -0.5rem -0.5rem 1rem #ffffff;
     }
@@ -479,7 +491,7 @@ svg {
       @include l.content_flex(center, column, start);
     }
     &:focus-within {
-      transition: all 0.5s ease;
+      transition: color .5s ease;
       color: map-get(l.$colors, bg-light);
     }
   }
@@ -501,7 +513,7 @@ svg {
 
     &:focus {
       outline: none;
-      transition: all 2s ease;
+      transition: background 2s ease;
       background-color: map-get(l.$colors, bg-light);
     }
   }
@@ -585,7 +597,7 @@ svg {
   right: 0;
   &__home {
     @include l.fonts(title, bold, normal, footer-text);
-    transition: all 0.5s ease;
+    transition: color 0.5s ease;
 
     &:hover {
       color: map-get(l.$colors, bg-light);
@@ -616,7 +628,6 @@ svg {
   }
 
   @include l.responsive(laptop) {
-    width: 99vw;
     @include l.content_flex(space-around, row, center);
     @include l.fonts(normal, normal, normal, footer-text);
     padding: 1em 2em 0.5em;
@@ -636,6 +647,10 @@ svg {
       border: 0;
       width: 30%;
     }
+  }
+
+  @include l.responsive(desktop) {
+    width: 99.1vw;
   }
 }
 

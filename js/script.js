@@ -1,11 +1,15 @@
+//DEFINICIÓN DE CONSTANTES/VARIABLES
+//carrusel
 const buttons = document.getElementById('btn')
 const items = document.getElementById('items')
 
+//Navegador vesión movil/
 const btnNav = document.getElementById('toggle')
 const nav = document.getElementById('nav')
 
+//Navegación versión laptop/desktop
 const header = document.getElementById('header')
-let lastScroll = 0
+let lastScroll = window.scrollY
 
 //****************EVENTOS****************
 
@@ -72,12 +76,18 @@ function showNav(e) {
 function controlHeader(e) {
   const currentScroll = window.scrollY
 
-  if (currentScroll <= 300) {
+  if (currentScroll <= 250) {
     header.classList.remove('oculta-header')
     header.classList.add('color-transparent')
-  } else if (currentScroll > lastScroll) {
+  } else if (
+    currentScroll > lastScroll &&
+    !header.classList.contains('oculta-header')
+  ) {
     header.classList.add('oculta-header')
-  } else if (currentScroll < lastScroll) {
+  } else if (
+    currentScroll < lastScroll &&
+    header.classList.contains('oculta-header')
+  ) {
     header.classList.remove('oculta-header', 'color-transparent')
   }
   lastScroll = currentScroll
@@ -86,5 +96,9 @@ function controlHeader(e) {
 buttons.addEventListener('click', move, onceTime)
 
 btnNav.addEventListener('click', showNav)
-
-window.addEventListener('scroll', controlHeader)
+console.log(window.innerWidth)
+if (window.innerWidth < 1024) {
+  window.removeEventListener('scroll', controlHeader)
+} else {
+  window.addEventListener('scroll', controlHeader)
+}

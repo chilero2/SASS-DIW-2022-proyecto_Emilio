@@ -110,10 +110,10 @@ $breakpoints: (
 
 @mixin animacion_fondo {
   position: absolute;
-  animation: fondo-1 50s linear infinite both;
+  animation: fondo-1 10s linear infinite both;
   @keyframes fondo-1 {
     from {
-      transform: rotate(0deg) scale(1);
+      transform: rotate(0deg) scale(3);
     }
     to {
       transform: rotate(360deg) scale(3);

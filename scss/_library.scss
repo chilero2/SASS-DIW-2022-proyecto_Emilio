@@ -9,6 +9,11 @@ $colors: (
   footer-text: #ecfbf380,
   gallery-btn: #00696750,
   gallery-btn--hover: #00696799,
+  svg-1: #D2FAE5,
+  svg-2: #D5D2FA,
+  svg-3: #FAD6D2,
+  svg-4: #FAF6DE,
+
 );
 
 $font_size: (
@@ -101,4 +106,18 @@ $breakpoints: (
       @content;
     }
   }
+}
+
+@mixin animacion_fondo {
+  position: absolute;
+  animation: fondo-1 50s linear infinite both;
+  @keyframes fondo-1 {
+    from {
+      transform: rotate(0deg) scale(1);
+    }
+    to {
+      transform: rotate(360deg) scale(3);
+    }
+  }
+
 }

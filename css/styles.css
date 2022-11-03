@@ -36,48 +36,49 @@ svg {
   top: 0;
   left: 0;
   background-color: #ecfbf3;
-  z-index: -1;
+  z-index: 1;
   filter: blur(70px);
 }
 .fondo__svg {
-  position: absolute;
   width: 50%;
   height: 50%;
-  animation: fondo-1 100s linear infinite both;
-}
-.fondo__svg--1 {
-  top: 0;
-  left: 0;
-  fill: red;
+  position: absolute;
+  animation: fondo-1 50s linear infinite both;
 }
 @keyframes fondo-1 {
   from {
-    transform: rotate(0deg) scale(3);
+    transform: rotate(0deg) scale(1);
   }
   to {
     transform: rotate(360deg) scale(3);
   }
 }
+.fondo__svg--1 {
+  top: 0;
+  left: 0;
+  fill: #D2FAE5;
+}
 .fondo__svg--2 {
   top: 0;
   right: 0;
-  fill: green;
+  fill: #D5D2FA;
 }
 .fondo__svg--3 {
   bottom: 0;
   left: 0;
-  fill: orange;
+  fill: #FAD6D2;
 }
 .fondo__svg--4 {
   bottom: 0;
   right: 0;
-  fill: darksalmon;
+  fill: #FAF6DE;
 }
 
 .header {
   margin-top: 0;
   width: 100%;
   background-color: #ecfbf3;
+  transition: transform 0.8s, background-color 1s;
 }
 .header__content {
   position: relative;
@@ -173,6 +174,14 @@ svg {
     bottom: 0;
     border: 1px solid rgba(250, 102, 102, 0.5019607843);
   }
+}
+
+.oculta-header {
+  transform: translate3d(0, -100%, 0);
+}
+
+.color-transparent {
+  background-color: transparent;
 }
 
 .main__container {
@@ -473,7 +482,7 @@ svg {
   }
   .card__content {
     position: relative;
-    transition: all 2.25s;
+    transition: transform 2.25s;
     transform-style: preserve-3d;
     padding: 4em;
   }
